@@ -32,7 +32,7 @@ brew install docker docker-compose lazydocker colima
 # the best ide
 brew install neovim
 # misc
-brew install caddy
+brew install caddy gum
 # moderm cli utils
 brew install bat eza fzf jq ripgrep zoxide difftastic
 # unix alternatives
@@ -87,3 +87,32 @@ echo 'source ~/.profile' >> .zshrc
 
 echo "enabling executing apps from unknowns developers..."
 sudo spctl --master-disable
+
+# https://macos-defaults.com/
+echo "changing macos defaults..."
+# dock to the left with smaller icons
+defaults write com.apple.dock "orientation" -string "left"
+defaults write com.apple.dock "tilesize" -int "32"
+defaults write com.apple.dock "autohide" -bool "false"
+defaults write com.apple.dock "show-recents" -bool "false"
+defaults write com.apple.dock "mineffect" -string "scale"
+# trackpad
+defaults write com.apple.AppleMultitouchTrackpad "FirstClickThreshold" -int "0"
+# mission control
+defaults write com.apple.dock "mru-spaces" -bool "false"
+defaults write com.apple.dock "expose-group-apps" -bool "true"
+defaults write NSGlobalDomain "AppleSpacesSwitchOnActivate" -bool "true"
+# finder
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+# no ds store on network and external drives
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteRemovableMedia -bool true
+defaults write com.apple.desktopservices DSDontWriteExternalStores -bool true
+# restart processes
+killall Dock Finder
+echo "Please restart you machine :("
+
+
+
+
+
