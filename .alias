@@ -1,0 +1,21 @@
+alias lg='lazygit'
+alias nv='vi'
+alias cat='bat'
+alias ls='eza'
+
+alias grbiss='grbi --autostash --autosquash'
+
+alias git-log='glgg HEAD @{upstream} origin/HEAD --format="%Cred%h %Creset%s%n%C(cyan)%an %C(yellow)%cr %Cblue%D%Creset%n"'
+
+alias mycommits='git log --first-parent --oneline --no-decorate origin/main...HEAD'
+
+alias fixup='git commit --fixup=$(mycommits | gum filter --limit=1 | cut -d " " -f 1)'
+
+alias rebase='grbiss $(mycommits | gum filter --limit=1 | cut -d " " -f 1)^'
+
+alias ppd='pnpm platform dev'
+alias ppb='pnpm platform build'
+alias pps='pnpm platform start'
+
+alias prs='gh pr list --state=all'
+alias myprs='prs --author=aryan02420 --limit=60'
