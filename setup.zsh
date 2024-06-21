@@ -34,7 +34,7 @@ brew install neovim
 # misc
 brew install caddy gum
 # moderm cli utils
-brew install bat eza fzf jq ripgrep zoxide difftastic
+brew install bat eza fzf jq ripgrep zoxide difftastic fd
 # unix alternatives
 brew install gnu-sed gnu-tar
 # toolchains and languages
