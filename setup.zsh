@@ -47,16 +47,24 @@ brew install --cask steam
 echo "configuring git..."
 git config --global user.name "aryan02420"
 git config --global user.email "aryan02420@gmail.com"
+# git config --global user.signingkey "..."
 git config --global credential.helper store
 git config --global init.defaultbranch main
-# configute git-delta
-git config --global core.pager=delta
-git config --global interactive.difffilter=delta --color-only
-git config --global delta.navigate=true
-git config --global delta.light=false
-git config --global delta.side-by-side=true
-git config --global merge.conflictstyle=diff3
-git config --global diff.colormoved=default 
+# git config --global commit.gpgsign true
+git config --global core.autocrlf true
+git config --global core.pager delta
+git config --global pull.ff true
+git config --global push.autoSetupRemote true
+git config --global help.autocorrect prompt
+git config --global log.date iso
+# configure git
+git config --global merge.conflictstyle zdiff3
+git config --global diff.algorithm histogram
+git config --global diff.colormoved default
+git config --global interactive.difffilter "delta --color-only"
+git config --global delta.navigate true
+git config --global delta.light false
+git config --global delta.side-by-side true
 
 echo "installing node..."
 echo brew install volta
