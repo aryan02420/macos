@@ -98,7 +98,8 @@ sudo spctl --master-disable
 
 # https://macos-defaults.com/
 echo "changing macos defaults..."
-# dock to the left with smaller icons
+# declutter dock, move it to the left with smaller icons.
+defaults write com.apple.dock "persistent-apps" -array
 defaults write com.apple.dock "orientation" -string "left"
 defaults write com.apple.dock "tilesize" -int "32"
 defaults write com.apple.dock "autohide" -bool "false"
