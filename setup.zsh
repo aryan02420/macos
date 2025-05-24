@@ -2,21 +2,21 @@
 
 set -euxo pipefail
 
+echo "configuring shell profile..." 
+touch .zshrc
+echo 'source ~/.profile' >> .zshrc
+touch .profile
+
 echo "installing build-essentials..."
 xcode-select --install
 
 echo "installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> .profile
+source .zshrc
 
 echo "installing rosetta..."
 softwareupdate --install-rosetta --agree-to-license
-
-echo "configuring shell profile..." 
-touch .zshrc
-echo 'source ~/.profile' >> .zshrc
-touch .profile
-echo 'export PATH="/opt/homebrew/bin:$PATH"' >> .profile
-source .zshrc
 
 echo "installing packages..."
 # basic developer tools
@@ -67,14 +67,14 @@ git config --global delta.light false
 git config --global delta.side-by-side true
 
 echo "installing node..."
-echo brew install volta
+brew install volta
 echo 'export VOLTA_FEATURE_PNPM=1' >> .profile
+source .zshrc
+volta setup
 source .zshrc
 volta install node
 volta install pnpm
 volta install yarn
-volta setup
-source .zshrc
 
 echo "configuring packages..."
 brew tap homebrew/services
