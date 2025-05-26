@@ -58,6 +58,7 @@ git config --global push.autoSetupRemote true
 git config --global help.autocorrect prompt
 git config --global log.date iso
 # configure git
+git lfs install
 git config --global merge.conflictstyle zdiff3
 git config --global diff.algorithm histogram
 git config --global diff.colormoved default
@@ -77,7 +78,6 @@ volta install pnpm
 volta install yarn
 
 echo "configuring packages..."
-brew tap homebrew/services
 echo 'eval "$(fzf --zsh)"' >> .profile
 echo 'eval "$(zoxide init zsh)"' >> .profile
 source .zshrc
