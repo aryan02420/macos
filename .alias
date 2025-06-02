@@ -13,9 +13,5 @@ alias fixup='git commit --fixup=$(mycommits | gum filter --limit=1 | cut -d " " 
 
 alias rebase='grbiss $(mycommits | gum filter --limit=1 | cut -d " " -f 1)^'
 
-alias ppd='pnpm platform dev'
-alias ppb='pnpm platform build'
-alias pps='pnpm platform start'
-
 alias prs='gh pr list --state=all'
 alias myprs='prs --author=aryan02420 --limit=60'
