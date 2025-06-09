@@ -113,6 +113,9 @@ defaults write com.apple.dock "expose-group-apps" -bool "true"
 defaults write NSGlobalDomain "AppleSpacesSwitchOnActivate" -bool "true"
 # finder
 defaults write com.apple.finder "ShowPathbar" -bool "true"
+# keyboard
+# # disable input method for character accents
+defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 # no ds store on network and external drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteRemovableMedia -bool true
