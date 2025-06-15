@@ -66,6 +66,8 @@ git config --global interactive.difffilter "delta --color-only"
 git config --global delta.navigate true
 git config --global delta.light false
 git config --global delta.side-by-side true
+# configure gh cli
+gh config set editor nvim
 
 echo "installing node..."
 brew install volta
