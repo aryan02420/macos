@@ -34,11 +34,11 @@ brew install neovim
 # misc
 brew install caddy gum
 # moderm cli utils
-brew install bat eza fzf jq ripgrep zoxide difftastic fd
+brew install bat eza fzf jq ripgrep zoxide difftastic fd tmux
 # unix alternatives
 brew install gnu-sed gnu-tar
 # toolchains and languages
-brew install deno rust
+brew install deno rust jupyter
 # browsers
 brew install --cask firefox microsoft-edge
 # games
@@ -78,6 +78,9 @@ source .zshrc
 volta install node
 volta install pnpm
 volta install yarn
+
+echo "installiing deno jupyter kernel"
+deno jupyter --install
 
 echo "configuring packages..."
 echo 'eval "$(fzf --zsh)"' >> .profile
