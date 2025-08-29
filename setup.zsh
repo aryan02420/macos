@@ -112,6 +112,8 @@ defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "mineffect" -string "scale"
 # trackpad
 defaults write com.apple.AppleMultitouchTrackpad "FirstClickThreshold" -int "0"
+# turn off natural scrolling
+defaults write -g com.apple.swipescrolldirection -bool "false" 
 # mission control
 defaults write com.apple.dock "mru-spaces" -bool "false"
 defaults write com.apple.dock "expose-group-apps" -bool "true"
