@@ -87,6 +87,9 @@ echo 'eval "$(fzf --zsh)"' >> .profile
 echo 'eval "$(zoxide init zsh)"' >> .profile
 source .zshrc
 
+echo "starting background services..."
+brew services start colima
+
 echo "installing zsh prompt theme..."
 brew tap homebrew/cask-fonts
 brew install --cask font-meslo-lg-nerd-font
